@@ -1,5 +1,27 @@
 # @backstage/ui
 
+## 0.9.0-next.1
+
+### Minor Changes
+
+- b78fc45: **BREAKING**: Changed className prop behavior to augment default styles instead of being ignored or overriding them.
+
+  Affected components:
+
+  - Menu, MenuListBox, MenuAutocomplete, MenuAutocompleteListbox, MenuItem, MenuListBoxItem, MenuSection, MenuSeparator
+  - Switch
+  - Skeleton
+  - FieldLabel
+  - Header, HeaderToolbar
+  - HeaderPage
+  - Tabs, TabList, Tab, TabPanel
+
+  If you were passing custom className values to any of these components that relied on the previous behavior, you may need to adjust your styles to account for the default classes now being applied alongside your custom classes.
+
+### Patch Changes
+
+- 1ef3ca4: Added new VisuallyHidden component for hiding content visually while keeping it accessible to screen readers.
+
 ## 0.8.2-next.0
 
 ### Patch Changes
