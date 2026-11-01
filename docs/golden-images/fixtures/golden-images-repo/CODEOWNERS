@@ -1,0 +1,7 @@
+# Fixture for the golden images entity provider tests.
+# GitHub semantics: the LAST matching pattern wins. The provider uses the first owner listed.
+*                   @acme/platform-team
+images/python-*     @acme/platform-python
+images/node-*       @acme/platform-node
+images/nginx-*      @acme/platform-edge @acme/security
+.trivyignore.yaml   @acme/security

@@ -1,0 +1,30 @@
+{
+  "apiVersion": "backstage.io/v1alpha1",
+  "kind": "Component",
+  "metadata": {
+    "name": "python-3-12",
+    "title": "Python 3.12 (Debian slim)",
+    "description": "Hardened Python 3.12 runtime on Debian 12 slim. Non-root, pip and venv included.",
+    "tags": ["python", "debian", "runtime", "non-root"],
+    "annotations": {
+      "backstage.io/managed-by-location": "url:https://github.com/acme/golden-images/tree/main/images/python-3.12",
+      "backstage.io/managed-by-origin-location": "url:https://github.com/acme/golden-images",
+      "backstage.io/source-location": "url:https://github.com/acme/golden-images/tree/main/images/python-3.12/",
+      "backstage.io/techdocs-ref": "url:https://github.com/acme/golden-images/tree/main/images/python-3.12",
+      "github.com/project-slug": "acme/golden-images",
+      "golden-images.acme.io/image-ref": "ghcr.io/acme/python:3.12",
+      "golden-images.acme.io/registry": "ghcr.io/acme/python",
+      "golden-images.acme.io/tier": "supported",
+      "golden-images.acme.io/eol-date": "2028-10-31",
+      "golden-images.acme.io/runtime-version": "python 3.12.7",
+      "golden-images.acme.io/dockerfile-path": "images/python-3.12/Dockerfile"
+    }
+  },
+  "spec": {
+    "type": "golden-image",
+    "lifecycle": "production",
+    "owner": "group:default/platform-python",
+    "system": "golden-images",
+    "dependsOn": ["component:default/debian-12-base"]
+  }
+}

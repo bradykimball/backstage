@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(yarn tsc*)",
+      "Bash(yarn test*)",
+      "Bash(yarn lint*)",
+      "Bash(yarn prettier*)",
+      "Bash(yarn backstage-cli *)",
+      "Bash(yarn workspace *)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git branch*)",
+      "Bash(git checkout -b golden-images/*)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ],
+    "ask": [
+      "Bash(yarn add *)",
+      "Bash(yarn install*)",
+      "Bash(yarn new*)",
+      "Bash(yarn start*)",
+      "Bash(yarn dev*)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Edit(**/app-config.production.yaml)",
+      "Edit(.claude/**)",
+      "Bash(git push*)",
+      "Bash(npm publish*)",
+      "Bash(yarn npm publish*)"
+    ]
+  }
+}

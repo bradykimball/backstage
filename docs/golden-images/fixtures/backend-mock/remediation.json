@@ -1,0 +1,62 @@
+{
+  "python-3-12": {
+    "status": "pr-open",
+    "ref": "https://github.com/acme/golden-images/pull/124",
+    "currentRun": null,
+    "openPullRequests": [
+      { "number": 124, "title": "fix(python-3.12): remediate 3 Medium CVEs in libexpat1, libsqlite3-0, liblzma5", "url": "https://github.com/acme/golden-images/pull/124", "kind": "fix", "cves": ["CVE-2026-33102", "CVE-2026-33240", "CVE-2026-33517"], "openedAt": "2026-10-31T04:40:00Z", "reviewers": ["@acme/platform-python"], "verify": { "fixed": 3, "newHighOrCritical": 0 } },
+      { "number": 125, "title": "chore(security): 30-day exception for CVE-2026-31778 (libxml2)", "url": "https://github.com/acme/golden-images/pull/125", "kind": "exception", "cves": ["CVE-2026-31778"], "openedAt": "2026-10-31T04:41:00Z", "reviewers": ["@acme/security"], "verify": null }
+    ],
+    "recentOutcomes": [
+      { "number": 116, "result": "merged", "note": null, "mergedAt": "2026-10-16T15:20:00Z" }
+    ]
+  },
+  "debian-12-base": {
+    "status": "needs-human",
+    "ref": "https://github.com/acme/golden-images/pull/125",
+    "currentRun": null,
+    "openPullRequests": [],
+    "needsHuman": {
+      "cves": ["CVE-2026-31778"],
+      "reason": "No fixed version in Debian 12 yet. Options: (a) 30-day exception, drafted in #125; (b) remove libxml2 from the base, which breaks python-3.12 and nginx-1.26-fips builds. Recommend (a) and recheck weekly."
+    },
+    "recentOutcomes": []
+  },
+  "node-22": {
+    "status": "pr-open",
+    "ref": "https://github.com/acme/golden-images/pull/127",
+    "currentRun": null,
+    "openPullRequests": [
+      { "number": 127, "title": "fix(node-22): bump libssl3 for CVE-2026-32950", "url": "https://github.com/acme/golden-images/pull/127", "kind": "fix", "cves": ["CVE-2026-32950"], "openedAt": "2026-10-30T06:10:00Z", "reviewers": ["@acme/platform-node"], "verify": { "fixed": 1, "newHighOrCritical": 0 } }
+    ],
+    "recentOutcomes": [
+      { "number": 111, "result": "merged-after-edit", "note": "Squash the two RUN lines", "mergedAt": "2026-10-09T11:02:00Z" }
+    ]
+  },
+  "go-1-26": {
+    "status": "none",
+    "ref": null,
+    "currentRun": null,
+    "openPullRequests": [],
+    "recentOutcomes": [
+      { "number": 119, "result": "merged", "note": null, "mergedAt": "2026-10-29T09:30:00Z" }
+    ]
+  },
+  "nginx-1-26-fips": {
+    "status": "manual-only",
+    "ref": null,
+    "currentRun": null,
+    "openPullRequests": [],
+    "recentOutcomes": []
+  },
+  "java-21-temurin": {
+    "_comment": "Not in the fixture repo on purpose: the queue must tolerate status for images the catalog doesn't know.",
+    "status": "running",
+    "ref": "https://github.com/acme/golden-images/actions/runs/487",
+    "currentRun": { "id": 487, "url": "https://github.com/acme/golden-images/actions/runs/487", "startedAt": "2026-10-31T06:30:00Z", "cves": ["CVE-2026-33877", "CVE-2026-34410"] },
+    "openPullRequests": [],
+    "recentOutcomes": [
+      { "number": 114, "result": "closed", "note": "Pinned a version not in our mirror", "mergedAt": null }
+    ]
+  }
+}

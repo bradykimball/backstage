@@ -1,0 +1,50 @@
+{
+  "python-3-12": {
+    "scannedAt": "2026-10-31T03:00:00Z",
+    "scanner": "trivy",
+    "counts": { "critical": 0, "high": 1, "medium": 4, "low": 11 },
+    "findings": [
+      { "id": "CVE-2026-31778", "pkg": "libxml2", "severity": "high", "installed": "2.9.14+dfsg-1.3", "fixedIn": null, "layer": "debian-12-base", "status": "exception-proposed", "ref": "https://github.com/acme/golden-images/pull/125" },
+      { "id": "CVE-2026-33102", "pkg": "libexpat1", "severity": "medium", "installed": "2.5.0-1", "fixedIn": "2.5.0-1+deb12u2", "layer": "self", "status": "pr-open", "ref": "https://github.com/acme/golden-images/pull/124" },
+      { "id": "CVE-2026-33240", "pkg": "libsqlite3-0", "severity": "medium", "installed": "3.40.1-2", "fixedIn": "3.40.1-2+deb12u2", "layer": "self", "status": "pr-open", "ref": "https://github.com/acme/golden-images/pull/124" },
+      { "id": "CVE-2026-33517", "pkg": "liblzma5", "severity": "medium", "installed": "5.4.1-0.2", "fixedIn": "5.4.1-1", "layer": "self", "status": "pr-open", "ref": "https://github.com/acme/golden-images/pull/124" },
+      { "id": "CVE-2026-34011", "pkg": "libgnutls30", "severity": "medium", "installed": "3.7.9-2+deb12u3", "fixedIn": null, "layer": "debian-12-base", "status": "open", "ref": null }
+    ]
+  },
+  "debian-12-base": {
+    "scannedAt": "2026-10-31T03:00:00Z",
+    "scanner": "trivy",
+    "counts": { "critical": 0, "high": 1, "medium": 3, "low": 9 },
+    "findings": [
+      { "id": "CVE-2026-31778", "pkg": "libxml2", "severity": "high", "installed": "2.9.14+dfsg-1.3", "fixedIn": null, "layer": "self", "status": "needs-human", "ref": "https://github.com/acme/golden-images/pull/125" }
+    ]
+  },
+  "node-22": {
+    "scannedAt": "2026-10-31T03:00:00Z",
+    "scanner": "trivy",
+    "counts": { "critical": 0, "high": 1, "medium": 2, "low": 6 },
+    "findings": [
+      { "id": "CVE-2026-32950", "pkg": "libssl3", "severity": "high", "installed": "3.0.15-1~deb12u1", "fixedIn": "3.0.16-1~deb12u1", "layer": "self", "status": "pr-open", "ref": "https://github.com/acme/golden-images/pull/127" }
+    ]
+  },
+  "go-1-26": {
+    "scannedAt": "2026-10-31T03:00:00Z",
+    "scanner": "trivy",
+    "counts": { "critical": 0, "high": 0, "medium": 0, "low": 0 },
+    "findings": []
+  },
+  "nginx-1-26-fips": {
+    "scannedAt": "2026-10-31T03:00:00Z",
+    "scanner": "trivy",
+    "counts": { "critical": 0, "high": 0, "medium": 1, "low": 4 },
+    "findings": [
+      { "id": "CVE-2026-28114", "pkg": "libpcre2-8-0", "severity": "medium", "installed": "10.42-1", "fixedIn": "10.42-1+deb12u1", "layer": "self", "status": "open", "ref": null }
+    ]
+  },
+  "python-3-9": {
+    "scannedAt": "2026-10-31T03:00:00Z",
+    "scanner": "trivy",
+    "counts": { "critical": 2, "high": 9, "medium": 23, "low": 40 },
+    "findings": []
+  }
+}

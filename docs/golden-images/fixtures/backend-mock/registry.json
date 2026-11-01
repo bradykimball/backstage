@@ -1,0 +1,59 @@
+{
+  "python-3-12": {
+    "registry": "ghcr.io/acme/python",
+    "recommendedTag": "3.12-2026.10.27",
+    "digest": "sha256:9f1c0a7e4b2d6f8a1c3e5b7d9f0a2c4e6b8d0f1a3c5e7b9d1f2a4c6e8b0dc31e",
+    "platforms": ["linux/amd64", "linux/arm64"],
+    "sizeBytes": 50541363,
+    "created": "2026-10-27T02:14:09Z",
+    "signature": { "verified": true, "issuer": "https://token.actions.githubusercontent.com" },
+    "provenance": "slsa-l3",
+    "sbomUrl": "https://ghcr.io/v2/acme/python/manifests/sha256-9f1c0a7e.sbom",
+    "recentTags": [
+      { "tag": "3.12-2026.10.27", "digest": "sha256:9f1c0a7e4b2d6f8a1c3e5b7d9f0a2c4e6b8d0f1a3c5e7b9d1f2a4c6e8b0dc31e", "created": "2026-10-27T02:14:09Z", "reason": "weekly rebuild" },
+      { "tag": "3.12-2026.10.20", "digest": "sha256:2b4d6f8a0c1e3a5c7e9b1d3f5a7c9e0b2d4f6a8c0e1b3d5f7a9c1e2b4d6f8a0c", "created": "2026-10-20T02:12:51Z", "reason": "weekly rebuild" },
+      { "tag": "3.12-2026.10.16", "digest": "sha256:1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b", "created": "2026-10-16T15:40:02Z", "reason": "CVE-2026-29910 hotfix" },
+      { "tag": "3.12-2026.09.15", "digest": "sha256:4c88e2a1b0f9d8c7e6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b7a6f5b19a", "created": "2026-09-15T02:10:33Z", "reason": "weekly rebuild" }
+    ]
+  },
+  "debian-12-base": {
+    "registry": "ghcr.io/acme/base",
+    "recommendedTag": "debian-12-2026.10.27",
+    "digest": "sha256:0b7e5c2d9a41f86e3b1c7d02a9e4f5b6c8d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5",
+    "platforms": ["linux/amd64", "linux/arm64"],
+    "sizeBytes": 31457280,
+    "created": "2026-10-27T02:03:44Z",
+    "signature": { "verified": true, "issuer": "https://token.actions.githubusercontent.com" },
+    "provenance": "slsa-l3",
+    "sbomUrl": "https://ghcr.io/v2/acme/base/manifests/sha256-0b7e5c2d.sbom",
+    "recentTags": [
+      { "tag": "debian-12-2026.10.27", "digest": "sha256:0b7e5c2d9a41f86e3b1c7d02a9e4f5b6c8d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5", "created": "2026-10-27T02:03:44Z", "reason": "weekly rebuild" }
+    ]
+  },
+  "node-22": {
+    "registry": "ghcr.io/acme/node",
+    "recommendedTag": "22-2026.10.27",
+    "digest": "sha256:7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8e7d6c",
+    "platforms": ["linux/amd64", "linux/arm64"],
+    "sizeBytes": 68157440,
+    "created": "2026-10-27T02:20:10Z",
+    "signature": { "verified": true, "issuer": "https://token.actions.githubusercontent.com" },
+    "provenance": "slsa-l3",
+    "sbomUrl": "https://ghcr.io/v2/acme/node/manifests/sha256-7d6c5b4a.sbom",
+    "recentTags": [
+      { "tag": "22-2026.10.27", "digest": "sha256:7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8e7d6c", "created": "2026-10-27T02:20:10Z", "reason": "weekly rebuild" }
+    ]
+  },
+  "python-3-9": {
+    "registry": "ghcr.io/acme/python",
+    "recommendedTag": "3.9-2026.06.29",
+    "digest": "sha256:5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b7a6f5e4d",
+    "platforms": ["linux/amd64"],
+    "sizeBytes": 57671680,
+    "created": "2026-06-29T02:11:00Z",
+    "signature": { "verified": true, "issuer": "https://token.actions.githubusercontent.com" },
+    "provenance": "slsa-l3",
+    "sbomUrl": null,
+    "recentTags": []
+  }
+}

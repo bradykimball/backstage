@@ -1,0 +1,48 @@
+# Config used by tests and for local development against the fixtures.
+# Copy the goldenImages block into app-config.local.yaml to run the app on fixtures.
+# Relative paths resolve from the repo root in tests; when running `yarn start`, check RECON.md
+# for the backend's working directory and adjust (or use an absolute path locally).
+
+goldenImages:
+  source:
+    url: https://github.com/acme/golden-images
+    branch: main
+    dir: ./docs/golden-images/fixtures/golden-images-repo
+  labelPrefix: io.acme.golden
+  registryPrefix: ghcr.io/acme/
+  imageRefs: {}
+  system:
+    name: golden-images
+    owner: group:default/platform-team
+  ownerMap:
+    '@acme/platform-team': group:default/platform-team
+    '@acme/platform-python': group:default/platform-python
+    '@acme/platform-node': group:default/platform-node
+  defaultOwner: group:default/platform-team
+  schedule:
+    frequency: { minutes: 10 }
+    timeout: { minutes: 3 }
+  adopters:
+    devRepoDirs:
+      https://github.com/acme/payments-api: ./docs/golden-images/fixtures/service-repos/payments-api
+      https://github.com/acme/ledger-worker: ./docs/golden-images/fixtures/service-repos/ledger-worker
+      https://github.com/acme/web-frontend: ./docs/golden-images/fixtures/service-repos/web-frontend
+      https://github.com/acme/legacy-report: ./docs/golden-images/fixtures/service-repos/legacy-report
+  backend:
+    mode: mock
+    cacheTtl: { minutes: 5 }
+    github:
+      repo: acme/golden-images
+      remediateWorkflow: remediate-cves.yml
+      rebuildWorkflow: build-images.yml
+      remediationLabel: auto-remediation
+
+catalog:
+  locations:
+    # Fixture services (Phase 5) and the example template (Phase 6).
+    - type: file
+      target: ../../docs/golden-images/fixtures/service-repos/services.catalog.yaml
+    - type: file
+      target: ../../docs/golden-images/fixtures/templates/upgrade-base-image.yaml
+      rules:
+        - allow: [Template]

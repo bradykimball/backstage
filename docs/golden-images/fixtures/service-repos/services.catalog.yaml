@@ -1,0 +1,49 @@
+# Fixture services for the adopter processor (Phase 5).
+# Their source-location URLs are mapped to local folders by goldenImages.adopters.devRepoDirs.
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: payments-api
+  description: Card and bank-transfer payments for checkout
+  annotations:
+    backstage.io/source-location: url:https://github.com/acme/payments-api/tree/main/
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/team-payments
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ledger-worker
+  description: Consumes ledger events
+  annotations:
+    backstage.io/source-location: url:https://github.com/acme/ledger-worker/tree/main/
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/team-payments
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: web-frontend
+  description: Uses a Docker Hub base, not a golden image
+  annotations:
+    backstage.io/source-location: url:https://github.com/acme/web-frontend/tree/main/
+spec:
+  type: website
+  lifecycle: production
+  owner: group:default/team-web
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: legacy-report
+  description: Still on the deprecated python-3.9 image
+  annotations:
+    backstage.io/source-location: url:https://github.com/acme/legacy-report/tree/main/
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/team-finance

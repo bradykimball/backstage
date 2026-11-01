@@ -1,0 +1,87 @@
+# Example scaffolder template for Phase 6. Verify field names and filters against the
+# installed scaffolder version before relying on it. Long term this belongs in the images repo.
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: upgrade-base-image
+  title: Upgrade base image
+  description: Opens a pull request that bumps a service's FROM line to the recommended golden-image tag, pinned by digest.
+  tags: [golden-images]
+spec:
+  owner: group:default/platform-team
+  type: maintenance
+
+  parameters:
+    - title: Service
+      required: [service, repoUrl]
+      properties:
+        service:
+          title: Service
+          type: string
+          ui:field: OwnedEntityPicker
+          ui:options:
+            catalogFilter:
+              kind: Component
+        repoUrl:
+          title: Repository
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts: [github.com]
+    - title: Target image
+      required: [image]
+      properties:
+        image:
+          title: Golden image
+          type: string
+          ui:field: EntityPicker
+          ui:options:
+            catalogFilter:
+              kind: Component
+              spec.type: golden-image
+        tag:
+          title: Target tag
+          description: Leave blank for the recommended tag.
+          type: string
+
+  steps:
+    - id: fetch
+      name: Fetch repository
+      action: fetch:plain
+      input:
+        url: https://github.com/${{ (parameters.repoUrl | parseRepoUrl).owner }}/${{ (parameters.repoUrl | parseRepoUrl).repo }}
+
+    - id: resolve
+      name: Resolve target tag
+      action: golden-images:resolve-tag
+      input:
+        image: ${{ parameters.image }}
+        tag: ${{ parameters.tag }}
+
+    - id: rewrite
+      name: Rewrite FROM lines
+      action: golden-images:rewrite-from
+      input:
+        path: .
+        fromImage: ${{ steps.resolve.output.registry }}
+        toRef: ${{ steps.resolve.output.ref }}
+
+    - id: pr
+      name: Open pull request
+      action: publish:github:pull-request
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+        branchName: golden-images/upgrade-${{ steps.resolve.output.tag }}
+        title: "chore(deps): bump base image to ${{ steps.resolve.output.tag }}"
+        description: |
+          Bumps the base image to `${{ steps.resolve.output.ref }}`.
+          Files changed: ${{ steps.rewrite.output.changed | join(', ') }}
+          Opened from Backstage (golden images).
+
+  output:
+    links:
+      - title: Pull request
+        url: ${{ steps.pr.output.remoteUrl }}
+      - title: Service
+        icon: catalog
+        entityRef: ${{ parameters.service }}
