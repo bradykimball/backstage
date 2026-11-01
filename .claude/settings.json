@@ -27,7 +27,6 @@
       "Read(./.env.*)",
       "Edit(**/app-config.production.yaml)",
       "Edit(.claude/**)",
-      "Bash(git push*)",
       "Bash(npm publish*)",
       "Bash(yarn npm publish*)"
     ]
