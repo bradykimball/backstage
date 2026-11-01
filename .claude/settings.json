@@ -13,7 +13,8 @@
       "Bash(git branch*)",
       "Bash(git checkout -b golden-images/*)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(git push*)"
     ],
     "ask": [
       "Bash(yarn add *)",
